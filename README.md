@@ -1,4 +1,4 @@
-# 📚 Library Loan API
+﻿# 📚 Library Loan API
 
 API RESTful untuk mengelola **peminjaman buku perpustakaan** oleh anggota. Dibangun menggunakan **Node.js + Express.js** dengan database **Supabase (PostgreSQL)**, dan di-deploy ke **Vercel**.
 
@@ -8,7 +8,7 @@ API RESTful untuk mengelola **peminjaman buku perpustakaan** oleh anggota. Diban
 
 ## 🌐 Link Deployment
 
-**Base URL (Production):** `https://<your-project>.vercel.app`
+**Base URL (Production):** `https://library-loan-api-nine.vercel.app`
 
 ---
 
