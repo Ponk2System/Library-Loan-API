@@ -1,7 +1,7 @@
 {
-  "name": "sales-api",
+  "name": "library-loan-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "API peminjaman buku perpustakaan - PPB Modul 1",
   "main": "src/index.js",
   "type": "module",
   "scripts": {
@@ -9,7 +9,7 @@
     "start": "node src/index.js",
     "dev": "nodemon src/index.js"
   },
-  "keywords": [],
+  "keywords": ["library", "loan", "api", "express", "supabase"],
   "author": "",
   "license": "ISC",
   "dependencies": {

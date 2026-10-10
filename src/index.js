@@ -1,19 +1,23 @@
 import express from "express";
 import dotenv from "dotenv";
-import categoryRoutes from "./routes/categoryRoutes.js";
-import productRoutes from "./routes/productRoutes.js";
-import customerRoutes from "./routes/customerRoutes.js";
+import bookRoutes from "./routes/bookRoutes.js";
+import memberRoutes from "./routes/memberRoutes.js";
+import loanRoutes from "./routes/loanRoutes.js";
 
 dotenv.config();
 
 const app = express();
 app.use(express.json());
 
-app.use("/api/categories", categoryRoutes);
-app.use("/api/products", productRoutes);
-app.use("/api/customers", customerRoutes);
+app.use("/api/books", bookRoutes);
+app.use("/api/members", memberRoutes);
+app.use("/api/loans", loanRoutes);
 
 const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
+if (process.env.NODE_ENV !== "production") {
+  app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+  });
+}
+
+export default app;

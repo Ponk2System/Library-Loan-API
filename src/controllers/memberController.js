@@ -1,7 +1,7 @@
-import { CustomerModel } from "../models/customerModel.js";
+import { MemberModel } from "../models/memberModel.js";
 
-// Helper fungsi validasi (menggunakan throw Error)
-const validateCustomerInput = (data) => {
+// Helper fungsi validasi anggota
+const validateMemberInput = (data) => {
   if (!data.email || !data.email.includes("@")) {
     throw new Error("Email wajib memiliki karakter @");
   }
@@ -10,13 +10,13 @@ const validateCustomerInput = (data) => {
   }
 };
 
-export const CustomerController = {
+export const MemberController = {
   async getAll(req, res) {
     try {
       // Mengambil parameter dari req.query (GET URL params)
       const { name, page, limit } = req.query;
-      const customers = await CustomerModel.getAll(name, page, limit);
-      res.json(customers);
+      const members = await MemberModel.getAll(name, page, limit);
+      res.json(members);
     } catch (err) {
       res.status(500).json({ error: err.message });
     }
@@ -24,8 +24,8 @@ export const CustomerController = {
 
   async getById(req, res) {
     try {
-      const customer = await CustomerModel.getById(req.params.id);
-      res.json(customer);
+      const member = await MemberModel.getById(req.params.id);
+      res.json(member);
     } catch (err) {
       res.status(404).json({ error: err.message });
     }
@@ -33,30 +33,29 @@ export const CustomerController = {
 
   async create(req, res) {
     try {
-      console.log("Memulai validasi input ...");
-      // 1. Panggil helper fungsi yang sesuai
-      validateCustomerInput(req.body);
+      console.log("Memulai validasi input anggota ...");
+      // 1. Panggil helper fungsi validasi
+      validateMemberInput(req.body);
 
       // 2. Simpan ke database jika lolos validasi
-      const customer = await CustomerModel.create(req.body);
-      res.status(201).json(customer);
+      const member = await MemberModel.create(req.body);
+      res.status(201).json(member);
     } catch (err) {
       // 3. Tangkap error validasi (status 400)
       res.status(400).json({ error: err.message });
     }
-    return res.status(400).json({ debug: "KODE BARU SUDAH AKTIF" });
   },
 
   async update(req, res) {
     try {
       const { id } = req.params;
-      
-      // 1. Panggil helper fungsi yang sesuai
-      validateCustomerInput(req.body);
+
+      // 1. Panggil helper fungsi validasi
+      validateMemberInput(req.body);
 
       // 2. Update database jika lolos validasi
-      const customer = await CustomerModel.update(id, req.body);
-      res.json(customer);
+      const member = await MemberModel.update(id, req.body);
+      res.json(member);
     } catch (err) {
       res.status(400).json({ error: err.message });
     }
@@ -64,8 +63,8 @@ export const CustomerController = {
 
   async remove(req, res) {
     try {
-      await CustomerModel.remove(req.params.id);
-      res.json({ message: "Customer deleted successfully" });
+      await MemberModel.remove(req.params.id);
+      res.json({ message: "Anggota berhasil dihapus" });
     } catch (err) {
       res.status(400).json({ error: err.message });
     }
