@@ -1,9 +1,11 @@
 {
   "info": {
-    "_postman_id": "7b39f1c0-5182-4ef8-a6d0-a92c48419612",
+    "_postman_id": "7f6f0b86-519a-49be-b99d-63817630d981",
     "name": "Library Loan API",
     "description": "Koleksi API untuk Tugas Responsi PPB - Modul 1 (Library Loan Management)",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54119665",
+    "_collection_link": "https://go.postman.co/collection/54119665-7f6f0b86-519a-49be-b99d-63817630d981?source=collection_link"
   },
   "item": [
     {
@@ -12,15 +14,105 @@
         {
           "name": "Get All Books",
           "request": {
-            "method": "GET",
+            "method": "POST",
             "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"title\": \"Hujan\",\r\n        \"author\": \"Tere Liye\",\r\n        \"isbn\": \"978-602-03-2478-4\",\r\n        \"stock\": 10\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{base_url}}/api/books",
-              "host": ["{{base_url}}"],
-              "path": ["api", "books"]
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "books"
+              ]
             }
           },
-          "response": []
+          "response": [
+            {
+              "name": "Get All Books",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n        \"title\": \"Hujan\",\r\n        \"author\": \"Tere Liye\",\r\n        \"isbn\": \"978-602-03-2478-4\",\r\n        \"stock\": 10\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/api/books",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "books"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": ":status",
+                  "value": "201"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "public, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "date",
+                  "value": "Sat, 10 Oct 2026 18:17:51 GMT"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"a8-OMHUbc7icuRxsWx1LCljhXckJsI\""
+                },
+                {
+                  "key": "server",
+                  "value": "Vercel"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=63072000; includeSubDomains; preload"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-vercel-cache",
+                  "value": "MISS"
+                },
+                {
+                  "key": "x-vercel-id",
+                  "value": "sin1::iad1::q2khq-1791656269877-d4dd8a4a325d"
+                },
+                {
+                  "key": "content-length",
+                  "value": "168"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": \"40f87cd0-9196-4aa6-979e-ad549eb3e92b\",\n  \"title\": \"Hujan\",\n  \"author\": \"Tere Liye\",\n  \"isbn\": \"978-602-03-2478-4\",\n  \"stock\": 10,\n  \"created_at\": \"2026-10-10T18:17:50.935046+00:00\"\n}"
+            }
+          ]
         },
         {
           "name": "Get Book by ID",
@@ -29,8 +121,14 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/books/:id",
-              "host": ["{{base_url}}"],
-              "path": ["api", "books", ":id"],
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "books",
+                ":id"
+              ],
               "variable": [
                 {
                   "key": "id",
@@ -57,8 +155,13 @@
             },
             "url": {
               "raw": "{{base_url}}/api/books",
-              "host": ["{{base_url}}"],
-              "path": ["api", "books"]
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "books"
+              ]
             }
           },
           "response": []
@@ -79,8 +182,14 @@
             },
             "url": {
               "raw": "{{base_url}}/api/books/:id",
-              "host": ["{{base_url}}"],
-              "path": ["api", "books", ":id"],
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "books",
+                ":id"
+              ],
               "variable": [
                 {
                   "key": "id",
@@ -98,8 +207,14 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/books/:id",
-              "host": ["{{base_url}}"],
-              "path": ["api", "books", ":id"],
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "books",
+                ":id"
+              ],
               "variable": [
                 {
                   "key": "id",
@@ -122,11 +237,87 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/members",
-              "host": ["{{base_url}}"],
-              "path": ["api", "members"]
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "members"
+              ]
             }
           },
-          "response": []
+          "response": [
+            {
+              "name": "Get All Members",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/api/members",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "members"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": ":status",
+                  "value": "200"
+                },
+                {
+                  "key": "age",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "public, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "date",
+                  "value": "Sat, 10 Oct 2026 18:21:22 GMT"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"dd-4mrDYNUyvfRTa3kDYfofV5BGqSw\""
+                },
+                {
+                  "key": "server",
+                  "value": "Vercel"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=63072000; includeSubDomains; preload"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-vercel-cache",
+                  "value": "MISS"
+                },
+                {
+                  "key": "x-vercel-id",
+                  "value": "sin1::iad1::fkprx-1791656480733-f3fbaf089faa"
+                },
+                {
+                  "key": "content-length",
+                  "value": "221"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"id\": \"cffc5c10-d426-4bf8-a0ab-610ab3e32ffc\",\n    \"name\": \"Budi Doremi\",\n    \"email\": \"budi.baru@example.com\",\n    \"phone\": \"081234567890\",\n    \"address\": \"Jl. Jalan Cuman Kita Berdua, Semarang\",\n    \"created_at\": \"2026-10-10T16:47:30.935579+00:00\"\n  }\n]"
+            }
+          ]
         },
         {
           "name": "Get Member by ID",
@@ -135,8 +326,14 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/members/:id",
-              "host": ["{{base_url}}"],
-              "path": ["api", "members", ":id"],
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "members",
+                ":id"
+              ],
               "variable": [
                 {
                   "key": "id",
@@ -163,8 +360,13 @@
             },
             "url": {
               "raw": "{{base_url}}/api/members",
-              "host": ["{{base_url}}"],
-              "path": ["api", "members"]
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "members"
+              ]
             }
           },
           "response": []
@@ -185,8 +387,14 @@
             },
             "url": {
               "raw": "{{base_url}}/api/members/:id",
-              "host": ["{{base_url}}"],
-              "path": ["api", "members", ":id"],
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "members",
+                ":id"
+              ],
               "variable": [
                 {
                   "key": "id",
@@ -204,8 +412,14 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/members/:id",
-              "host": ["{{base_url}}"],
-              "path": ["api", "members", ":id"],
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "members",
+                ":id"
+              ],
               "variable": [
                 {
                   "key": "id",
@@ -228,8 +442,13 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/loans",
-              "host": ["{{base_url}}"],
-              "path": ["api", "loans"]
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "loans"
+              ]
             }
           },
           "response": []
@@ -241,8 +460,14 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/loans/:id",
-              "host": ["{{base_url}}"],
-              "path": ["api", "loans", ":id"],
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "loans",
+                ":id"
+              ],
               "variable": [
                 {
                   "key": "id",
@@ -260,8 +485,13 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/loans?status=Dipinjam",
-              "host": ["{{base_url}}"],
-              "path": ["api", "loans"],
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "loans"
+              ],
               "query": [
                 {
                   "key": "status",
@@ -288,8 +518,13 @@
             },
             "url": {
               "raw": "{{base_url}}/api/loans",
-              "host": ["{{base_url}}"],
-              "path": ["api", "loans"]
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "loans"
+              ]
             }
           },
           "response": []
@@ -310,8 +545,14 @@
             },
             "url": {
               "raw": "{{base_url}}/api/loans/:id",
-              "host": ["{{base_url}}"],
-              "path": ["api", "loans", ":id"],
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "loans",
+                ":id"
+              ],
               "variable": [
                 {
                   "key": "id",
@@ -329,8 +570,14 @@
             "header": [],
             "url": {
               "raw": "{{base_url}}/api/loans/:id",
-              "host": ["{{base_url}}"],
-              "path": ["api", "loans", ":id"],
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "loans",
+                ":id"
+              ],
               "variable": [
                 {
                   "key": "id",
